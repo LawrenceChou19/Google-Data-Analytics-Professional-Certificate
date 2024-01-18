@@ -52,8 +52,7 @@ head(hotel_bookings_v2)
 max(hotel_bookings$lead_time)
 min(hotel_bookings$lead_time)
 
-This is a common error that R users encounter. 
-
+# This is a common error that R users encounter. 
 # Now, let's say you just want to know what the average lead time for booking is because your boss asks you how early you should run promotions for hotel rooms. 
 # You can use the `mean()`function to answer that question:
 mean(hotel_bookings$lead_time)
@@ -84,14 +83,12 @@ mean(hotel_bookings_city$lead_time)
 # They are also interested in how they are different from resort hotels.
 # You don't want to run each line of code over and over again, so you decide to use the `group_by()`and`summarize()` functions. You can also use the pipe operator to make your code easier to follow. 
 # You will store the new data set in a data frame named 'hotel_summary':
+
 hotel_summary <- 
   hotel_bookings %>%
   group_by(hotel) %>%
   summarise(average_lead_time=mean(lead_time),
             min_lead_time=min(lead_time),
-            max_lead_time=max(lead_time)
-            average_time=av)
-
+            max_lead_time=max(lead_time))
 # Check out your new dataset using head() again:
 head(hotel_summary)
-
